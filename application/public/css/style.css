@@ -1,8 +1,33 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: beige;
 }
 
 a {
   color: #00B7FF;
+}
+
+a:hover {
+  color: gray;
+}
+
+.submit {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.submit:hover {
+  background-color: lightblue;
+  cursor: grab;
+}
+
+
+/* div {
+  
+} */
+
+footer {
+  text-align: center;
 }
