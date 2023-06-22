@@ -15,12 +15,34 @@ a:hover {
 .submit {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid black;
+  /* border: none; */
+  border: 1px solid black; 
 }
 
 .submit:hover {
   background-color: lightblue;
-  cursor: grab;
+  cursor: pointer;
+  transition: all .25s ease-in;
+}
+
+/* .checkbox1 {
+  background-color: lightgreen;
+}
+
+.checkbox1:checked {
+  background-color: darkgreen;
+} */
+
+input[type=text] {
+  background-color: lightgray;
+}
+
+input[type=text]:hover {
+  background-color: lightcyan;
+}
+
+input[type=checkbox]:hover {
+  cursor: pointer;
 }
 
 
