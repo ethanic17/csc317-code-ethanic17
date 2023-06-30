@@ -53,3 +53,25 @@ input[type=checkbox]:hover {
 footer {
   text-align: center;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 15px;
+}
+
+.grid-content {
+  /* border: 1px solid black; */
+  padding: 5px;
+  text-align: center;
+}
+
+#nav-wrapper {
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.active {
+  color: green;
+}
