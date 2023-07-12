@@ -97,6 +97,10 @@ footer {
   margin: 5px 0px 0px 0px;
 }
 
+.input:invalid { /* invalid state */
+  background-color: lightcoral;
+}
+
 /* input[type=text] {
   background-color: lightgray;
 }
