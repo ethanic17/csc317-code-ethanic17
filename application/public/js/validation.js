@@ -51,13 +51,13 @@ function passwordValidate(e) { // can use e again bc e defined in one scope of t
 function comparePassword(e) {
     var passwordMatch = e.target.value;
     // console.log(passwordMatch);
-    var password = "delta";
+    var password = ptextbox.value;
 
     if (passwordMatch != password) {
         e.target.setCustomValidity("Passwords do not match!");
     }
     else {
-        e.setCustomValidity("");
+        e.target.setCustomValidity("");
     }
 }
 
