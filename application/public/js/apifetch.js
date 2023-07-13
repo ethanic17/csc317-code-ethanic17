@@ -7,11 +7,11 @@ async function logPhotos() {
 
 
 printPhotos(); 
+var totalPhotos = 0;
 
 async function printPhotos() { /* wrap for loop inside another
      async funtion bc logPhotos() is an async function */
 
-    var totalPhotos = 0;
     for (let photos of await logPhotos()) { 
         console.log(photos); 
 
@@ -40,10 +40,18 @@ async function printPhotos() { /* wrap for loop inside another
         textDiv.append(textTag);
 
         
-        var totalPhotos = totalPhotos + 1;
-        
-    }
-    
+        totalPhotos = totalPhotos + 1;
+
+        card.addEventListener("click", (e) => {
+            var div = e.currentTarget; // captures current card div
+            div.style.animation = "fade-out 2.0s forwards";
+            setTimeout(() => {
+                div.remove();
+                updatetotalPhotos();
+            }, 1000);
+
+        });
+    } 
     // return totalPhotos;
     displayTotalPhotos(totalPhotos);
     /* 
@@ -57,6 +65,10 @@ async function printPhotos() { /* wrap for loop inside another
     */
 }
 
+function updatetotalPhotos() {
+    totalPhotos = totalPhotos -1;
+    displayTotalPhotos(totalPhotos);
+}
 
 
 async function displayTotalPhotos(total) {
@@ -64,5 +76,6 @@ async function displayTotalPhotos(total) {
 
     videos.textContent = total;
 }
+
 
 

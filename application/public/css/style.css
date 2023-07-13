@@ -192,3 +192,13 @@ footer {
   font-size: 15px;
   padding: 15px;
 }
+
+
+@keyframes fade-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
