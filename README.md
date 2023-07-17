@@ -10,18 +10,17 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | Ethan Zheng   |
+| Student ID    | 922474550     |
+| Student Email | ezheng2@sfsu.edu  |
 
 
 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. cd into ```applications``` folder
+2. run ```npm install``` in the terminal
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. run ```npm start``` in the terminal
