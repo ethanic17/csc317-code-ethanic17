@@ -13,18 +13,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/registration', function(req, res, next) {
-  res.render('registration', { title: 'CSC 317 App', name:"Ethan Zheng" });
+  res.render('registration', { title: 'Registration'  });
 });
 
 router.get('/postvideo', function(req, res, next) {
-  res.render('postvideo', { title: 'CSC 317 App', name:"Ethan Zheng" });
+  res.render('postvideo', { title: 'Post A Video' });
 });
 
 router.get('/viewpost', function(req, res, next) {
-  res.render('viewpost', { title: 'CSC 317 App', name:"Ethan Zheng" });
+  res.render('viewpost', { title: 'Post Details' });
 });
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'CSC 317 App', name:"Ethan Zheng" });
+  res.render('login', { title: 'Login To Flight' });
 });
 
 

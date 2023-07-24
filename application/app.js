@@ -17,9 +17,52 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      addition: addition,
+      currentPage: currentPage
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
+
+let x = 0;
+function addition(x) {
+  x = x +1;
+  return x;
+};
+
+let pageTitle = 1;
+let registrationactive = false;
+let indexactive = false;
+let postvideoactive = false;
+let postdetailsactive = false;
+let loginactive = false;
+
+function currentPage(pageTitle) {
+  if (pageTitle === "Registration") {
+    // registrationactive = true;
+    // return registrationactive;
+    return 1;
+  }
+  if (pageTitle === "CSC 317 App") {
+    indexactive = true;
+    return indexactive;
+  }
+  if (pageTitle === "Post A Video") {
+    postvideoactive = true;
+    return postvideoactive;
+  }
+  if (pageTitle === "Post Details") {
+    postdetailsactive = true;
+    return postdetailsactive;
+  }
+  if (pageTitle === "Login To Flight") {
+    loginactive = true;
+    return loginactive;
+  }
+};
+
+// if-else in handlebars that takes 1, 2,3 and adjusts the navbar active status 
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
