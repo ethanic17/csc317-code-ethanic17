@@ -2,24 +2,11 @@ body {
   padding: 50px; 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: beige;
-  
-}
-
-#index-body {
   background-image: url(../media/city2.gif);
   background-repeat: repeat;
   background-size: 100%;
   background-position: center;
-  opacity: 80%;
-}
-
-#login-body {
-  background-image: url(../media/city2.gif);
-  background-repeat: repeat;
-  /* height: 500px;  */
-  background-size: 100%;
-  background-position: center;
-  opacity: 95%;
+  opacity: 85%;
 }
 
 a {
@@ -31,11 +18,15 @@ a:hover {
 }
 
 .div-active:hover {
-  background-color: lightgray;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightblue;
 }
 
 #nav-wrapper:hover {
-  background-color: lightgray;
+  background-color: lightblue;
 }
 
 
@@ -94,7 +85,7 @@ footer {
 
 
 #nav-wrapper {
-  background-color: lightblue;
+  background-color: #B2BEB5;
   border-radius: 10px;
   padding: 5px;
   font-size: 20px;
@@ -112,7 +103,9 @@ footer {
   padding: 15px;
   text-align: center;
   font-size: 25px;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color:  #B2BEB5;
+  
   border-radius: 10px;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
@@ -173,7 +166,7 @@ footer {
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background:  lightblue;
+  background:  #B2BEB5;
   border-radius: 10px;
   margin: 50px 0px 0px 0px;
   padding: 10px;
