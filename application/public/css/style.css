@@ -17,6 +17,14 @@ a:hover {
   color: gray;
 }
 
+.black {
+  color: black;
+}
+
+.black:hover {
+  color: green;
+}
+
 .div-active:hover {
   background-color: lightblue;
 }
@@ -159,6 +167,10 @@ footer {
   border-radius: 10px;
   padding: 1px 15px 15px 15px;
   margin: 10px 0px 0px 0px;
+}
+
+.comments:hover {
+  background-color: lightslategrey;
 }
 
 .flex-container {

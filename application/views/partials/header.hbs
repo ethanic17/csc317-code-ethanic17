@@ -1,6 +1,4 @@
-<!-- index.hbs uses apifetch.js & registration.hbs uses validation.js, all files need to link to css, title -->
-<!-- active status on current page -->
-{{log this}}
+{{!-- {{log this}} --}}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> {{this.title}}</title>
@@ -26,23 +24,23 @@
                     </script>
                 {{/if}} --}}
                 <div class="grid-content col">
-                    <a id="home" href="/">Home</a>
+                    <a class="black" id="home" href="/">Home</a>
                 </div>
 
                 <div class="grid-content col"> 
-                    <a id="login" href="/login">Login</a>
+                    <a class="black" id="login" href="/login">Login</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a id="register" href="/registration">Register Account</a>
+                    <a class="black" id="register" href="/registration">Register Account</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a id="postvideo" href="/postvideo">Post A Video</a>
+                    <a class="black" id="postvideo" href="/postvideo">Post A Video</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a id="viewpost" href="/viewpost">View Posts</a>
+                    <a class="black" id="viewpost" href="/viewpost">View Posts</a>
                 </div>
             </div>
         </nav>
