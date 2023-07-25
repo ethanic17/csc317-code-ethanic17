@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/cbf60cc09c.js" crossorigin="anonymous"></script> <!-- icons test-->
     <script defer src="../public/js/apifetch.js"></script>
     <script defer src="../public/js/validation.js"></script>
+    <script defer src="../public/js/pagecheck.js"></script>
     <div id="nav-wrapper">
         <nav class="grid-container container">
             <div class="row">
@@ -17,41 +18,31 @@
                     <h1 class="icons"> <i class="fa-solid fa-plane"></i> Flight</h1>
                 </div>
 
-                {{!-- {{log this}}
-
-                {{#if  }}
-                <h1>{{firstName}} {{lastName}}</h1>
-                {{/if}} --}}
-
-                {{!-- {{
-                    DetectPage currentPage 
-                }} --}}
-
-                {{#ifEquals cPage 1}}
+                {{!-- {{#if (ifEquals this.title "CSC 317 App")}}
                 <h1> testing text</h1>
                     <script>
                         var home = document.getElementById('home');
                         home.classList.add("active"); 
                     </script>
-                {{/ifEquals}}
+                {{/if}} --}}
                 <div class="grid-content col">
                     <a id="home" href="/">Home</a>
                 </div>
 
                 <div class="grid-content col"> 
-                    <a href="/login">Login</a>
+                    <a id="login" href="/login">Login</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a href="/registration">Register Account</a>
+                    <a id="register" href="/registration">Register Account</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a href="/postvideo">Post A Video</a>
+                    <a id="postvideo" href="/postvideo">Post A Video</a>
                 </div>
 
                 <div class="grid-content col">
-                    <a href="/viewpost">View Posts</a>
+                    <a id="viewpost" href="/viewpost">View Posts</a>
                 </div>
             </div>
         </nav>
