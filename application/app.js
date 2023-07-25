@@ -18,34 +18,28 @@ app.engine(
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
     helpers: {
-      addition: addition,
-      currentPage: currentPage
+      // DetectPage: currentPage,
+      ifEquals : function(pageTitle, arg2, options) {
+        // return (pageTitle === arg2) ? options.fn(this) : options.inverse(this);
+        console.log(pageTitle, arg2, options);
+    },
+      // cPage : 
     }, //adding new helpers to handlebars for extra functionality
   })
 );
 
-let x = 0;
-function addition(x) {
-  x = x +1;
-  return x;
-};
+let pageTitle = "CSC 317 App"; // router.res.title
 
-let pageTitle = 1;
-let registrationactive = false;
-let indexactive = false;
-let postvideoactive = false;
-let postdetailsactive = false;
-let loginactive = false;
-
-function currentPage(pageTitle) {
+function currentPage(pageTitle)  { 
   if (pageTitle === "Registration") {
     // registrationactive = true;
     // return registrationactive;
     return 1;
   }
   if (pageTitle === "CSC 317 App") {
-    indexactive = true;
-    return indexactive;
+    // indexactive = true;
+    // return indexactive;
+    return "1";
   }
   if (pageTitle === "Post A Video") {
     postvideoactive = true;
@@ -59,7 +53,22 @@ function currentPage(pageTitle) {
     loginactive = true;
     return loginactive;
   }
-};
+}
+
+// const handlebars = require('handlebars');
+
+// handlebars.registerHelper('ifEquals', function(pageTitle, arg2, options) {
+//     return (pageTitle == arg2) ? options.fn(this) : options.inverse(this);
+// });
+
+
+let registrationactive = false;
+let indexactive = false;
+let postvideoactive = false;
+let postdetailsactive = false;
+let loginactive = false;
+
+
 
 // if-else in handlebars that takes 1, 2,3 and adjusts the navbar active status 
 

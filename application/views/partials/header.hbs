@@ -22,8 +22,20 @@
                 {{#if  }}
                 <h1>{{firstName}} {{lastName}}</h1>
                 {{/if}} --}}
+
+                {{!-- {{
+                    DetectPage currentPage 
+                }} --}}
+
+                {{#ifEquals cPage 1}}
+                <h1> testing text</h1>
+                    <script>
+                        var home = document.getElementById('home');
+                        home.classList.add("active"); 
+                    </script>
+                {{/ifEquals}}
                 <div class="grid-content col">
-                    <a href="/" class="active">Home</a>
+                    <a id="home" href="/">Home</a>
                 </div>
 
                 <div class="grid-content col"> 

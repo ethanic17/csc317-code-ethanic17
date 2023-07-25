@@ -3,13 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { 
-    title: 'CSC 317 App', 
-    name:"Ethan Zheng" });
-
-  // let cssPath = path.resolve(css, "public");
-
-  // index.use(express.static(cssPath));
+  res.render('index', { title: 'CSC 317 App', name:"Ethan Zheng" });
 });
 
 router.get('/registration', function(req, res, next) {
