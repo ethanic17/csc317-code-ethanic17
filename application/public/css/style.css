@@ -2,6 +2,24 @@ body {
   padding: 50px; 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: beige;
+  
+}
+
+#index-body {
+  background-image: url(../media/city2.gif);
+  background-repeat: repeat;
+  background-size: 100%;
+  background-position: center;
+  opacity: 80%;
+}
+
+#login-body {
+  background-image: url(../media/city2.gif);
+  background-repeat: repeat;
+  /* height: 500px;  */
+  background-size: 100%;
+  background-position: center;
+  opacity: 95%;
 }
 
 a {
@@ -11,6 +29,16 @@ a {
 a:hover {
   color: gray;
 }
+
+.div-active:hover {
+  background-color: lightgray;
+}
+
+#nav-wrapper:hover {
+  background-color: lightgray;
+}
+
+
 
 #small {
   font-size: 20px;
@@ -175,4 +203,14 @@ footer {
 video {
   width: auto;
   height: auto;
+}
+
+#video {
+  width: 500px;
+  height: auto;
+}
+
+.scale-down {
+  height: 100px;
+  width: 100px;
 }

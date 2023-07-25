@@ -1,21 +1,24 @@
 <!DOCTYPE html>
    {{>header}} <!-- points to header.hbs handlebars partial -->
-<body>
+<body id="index-body">
  
-    <div class="div container">
+    <div class="div container div-active">
         <div class="row">
             <div class="col">
             <h3> Welcome To Flight!</h3>
             
-            <p>Flight is a simplified video sharing & streaming website that's ad-free and user-friendly!
-                Create an account today and start uploading and watching videos!</p>
+            <p>Flight is a simple video sharing & streaming site that's ad-free and user-friendly!
+                Create an account today and start watching videos and uploading your own!</p>
 
                 <a class="btn btn-primary" href="/registration" role="button">Create An Account Today!</a>
                 <p id="small">or login <a href="/login">here</a></p>
             </div>
 
             <div class="col">
-            <img class="img-responsive" src="../public/media/city1.gif" alt="picture of a city gif">
+            {{!-- <img class="img-responsive" src="../public/media/city1.gif" alt="picture of a city gif"> --}}
+            <video id="video" controls="controls">
+                    <source src="../public/media/SPRAY AND PRAY.mp4"  type="video/mp4" alt="bad valorant clip" />
+                   </video>
             </div>
         </div>
     </div>  
