@@ -39,6 +39,18 @@ async function makeUsersTable(connection) {
   const [result, _] = await connection.query(
     // Users Table SQL Goes here
     `
+    CREATE TABLE IF NOT EXISTS csc317db.users (
+      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+      username VARCHAR(64) NOT NULL,
+      email VARCHAR(128) NOT NULL,
+      password VARCHAR(128) NOT NULL,
+      createdAt DATETIME NOT NULL DEFAULT current_timestamp,
+      updatedAt DATETIME NOT NULL DEFAULT current_timestamp,
+      PRIMARY KEY (id),
+      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+      UNIQUE INDEX username_UNIQUE (username ASC) VISIBLE,
+      UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE)
+    ENGINE = InnoDB
     `
   );
 
@@ -53,7 +65,25 @@ async function makeUsersTable(connection) {
 async function makePostsTable(connection) {
   const [result, _] = await connection.query(
     // Posts Table SQL Goes here
-    ``
+    ` CREATE TABLE IF NOT EXISTS csc317db.posts (
+      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+      title VARCHAR(255) NOT NULL,
+      description TEXT NOT NULL,
+      video VARCHAR(4096) NOT NULL,
+      thumbnail VARCHAR(4096) NOT NULL,
+      createdAt DATETIME NOT NULL DEFAULT current_timestamp,
+      updatedAt DATETIME NOT NULL DEFAULT current_timestamp,
+      fk_userId INT UNSIGNED NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+      INDEX post_author_idx (fk_userId ASC) VISIBLE,
+      CONSTRAINT post_author
+        FOREIGN KEY (fk_userId)
+        REFERENCES csc317db.users (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION)
+    ENGINE = InnoDB
+    `
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -67,6 +97,7 @@ async function makeCommentsTable(connection) {
   const [result, _] = await connection.query(
     // Comments Table SQL Goes here
     ` 
+    
     `
   );
   if (result && result.warningStatus > 0) {

@@ -21,8 +21,22 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Login To Flight' });
 });
 
-
-
-
-
 module.exports = router;
+
+const mysql = require('mysql2');
+
+var conn = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "csc317db",
+});
+
+conn.query("select 1+1", function(err, results) {
+  if(err) {
+    console.log(err);
+  }
+  else {
+    console.log(results);
+  }
+})

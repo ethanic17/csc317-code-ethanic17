@@ -20,18 +20,40 @@
             <label>Re-type Password: </label>
             <input id="retype-textbox" class="input" type="password">
         </div>
+
+{{!-- 
         <div class="spacing">
             <input required type="checkbox">
             <label>I am 13+ years of age</label>
-        </div>
-        <div class="spacing">
+        </div> 
+         <div class="spacing">
             <input required class="checkbox" type="checkbox">
             <label>I agree to the <a href="">TOS and Privacy Rules</a></label>
-        </div>
+        </div> --}}
+
         <div class="spacing">
-            <input class="submit" type="submit">
+        <div class="form-check">
+            <input required class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                I am 13+ years of age
+            </label>
         </div>
-        </form>
+        </div>
+
+        <div class="spacing">
+        <div class="form-check">
+            <input required class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                I agree to the <a href="">TOS and Privacy Rules</a>
+            </label>
+        </div>
+        </div>
+
+        <div class="spacing">
+            {{!-- <input class="submit" type="submit"> --}}
+            <button type="submit" class="btn btn-success">Create Account</button>
+         </div>
+
     </div>
 
     <div class="div">
