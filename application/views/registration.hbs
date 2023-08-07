@@ -3,7 +3,8 @@
 <body>
     <div class="div container">
         <h4>Welcome! Please register below.</h4>
-        <form>
+        <form id="form" class="form-input" action="/users/register" method="post"
+        enctype="application/x-www-form-urlencoded">
         <div class="spacing">
             <label>Enter your email: </label>
             <input class="input" type="email" id="email">
@@ -54,6 +55,7 @@
             <button type="submit" class="btn btn-success">Create Account</button>
          </div>
 
+    </form>
     </div>
 
     <div class="div">
