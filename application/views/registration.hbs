@@ -3,23 +3,23 @@
 <body>
     <div class="div container">
         <h4>Welcome! Please register below.</h4>
-        <form id="form" class="form-input" action="/users/register" method="post"
+        <form id="form" class="form-input" action="/users/registration" method="post"
         enctype="application/x-www-form-urlencoded">
         <div class="spacing">
             <label>Enter your email: </label>
-            <input class="input" type="email" id="email">
+            <input class="input" type="email" id="email" name="email">
         </div>
         <div class="spacing">
             <label>Create a Username: </label>
-            <input id="username-textbox" class="input" type="username">
+            <input id="username-textbox" class="input" type="username" name="username">
         </div>
         <div class="spacing">
             <label>Create a Password: </label>
-            <input id="password-textbox" class="input" type="password">
+            <input id="password-textbox" class="input" type="password" name="password">
         </div>
         <div class="spacing">
             <label>Re-type Password: </label>
-            <input id="retype-textbox" class="input" type="password">
+            <input id="retype-textbox" class="input" type="password" name="confirm-password">
         </div>
 
 {{!-- 
