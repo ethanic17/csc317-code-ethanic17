@@ -29,16 +29,6 @@
                     <a class="black" id="home" href="/">Home</a>
                 </div>
 
-                {{#if isLoggedIn}}
-                    <div class="grid-content col"> 
-                        <a class="black" id="login" href="/login">Logout</a>
-                    </div>
-                {{else}}
-                    <div class="grid-content col"> 
-                        <a class="black" id="login" href="/login">Login</a>
-                    </div>
-                {{/if}}
-
                 <div class="grid-content col">
                     <a class="black" id="register" href="/registration">Register Account</a>
                 </div>
@@ -50,6 +40,20 @@
                 <div class="grid-content col">
                     <a class="black" id="viewpost" href="/viewpost">View Posts</a>
                 </div>
+
+                {{#if isLoggedIn}}
+                    <div class="grid-content col"> 
+                        {{!-- <a class="black" id="login" href="/login">Logout</a> --}}
+                        <button type="button" class="btn btn-danger" 
+                        onclick="window.location.href = '/login';">Logout</button>
+                    </div>
+                {{else}}
+                    <div class="grid-content col"> 
+                        {{!-- <a class="black" id="login" href="/login">Login</a> --}}
+                        <button type="button" class="btn btn-primary" 
+                        onclick="window.location.href = '/login';">Login</button>
+                    </div>
+                {{/if}}
             </div>
         </nav>
     </div>
