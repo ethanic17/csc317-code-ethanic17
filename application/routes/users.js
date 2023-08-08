@@ -51,6 +51,7 @@ router.post('/registration', async function(req, res, next) {
 
 router.post("/login", async function(req, res, next) {
     var {username, password} = req.body;
+    console.log(req.body);
     try {
       var [results, _] = await db.execute(
         `select id, username, email, password from users where username=?`,
