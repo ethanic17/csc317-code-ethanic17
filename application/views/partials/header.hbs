@@ -44,9 +44,18 @@
                 {{#if isLoggedIn}}
                     <div class="grid-content col"> 
                         {{!-- <a class="black" id="login" href="/login">Logout</a> --}}
-                        <button type="button" class="btn btn-danger" 
-                        onclick="window.location.href = '/login';">Logout</button>
+                        <form action="/users/logout" method="post">
+                            <button type="submit" class="btn btn-danger" 
+                            onclick="window.location.href = '/login';">Logout</button>
+                        </form>
+
+                        
+                        <form action="/users/profile" method="post">
+                            <button type="submit" class="btn btn-primary" 
+                            onclick="window.location.href = '/profile';">Profile</button>
+                        </form>
                     </div>
+                    
                 {{else}}
                     <div class="grid-content col"> 
                         {{!-- <a class="black" id="login" href="/login">Login</a> --}}
