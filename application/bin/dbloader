@@ -23,6 +23,12 @@ async function getConnection() {
   });
 }
 
+console.log({
+  host: process.env.DB_HOST, // "localhost"
+  user: process.env.DB_USER, // "root"
+  password: process.env.DB_PASSWORD, //""
+});
+
 async function makeDatabase(connection) {
   //TODO make sure to change yourdbnamehere
   const [result, _] = await connection.query(

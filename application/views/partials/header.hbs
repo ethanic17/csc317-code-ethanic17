@@ -29,9 +29,15 @@
                     <a class="black" id="home" href="/">Home</a>
                 </div>
 
-                <div class="grid-content col"> 
-                    <a class="black" id="login" href="/login">Login</a>
-                </div>
+                {{#if isLoggedIn}}
+                    <div class="grid-content col"> 
+                        <a class="black" id="login" href="/login">Logout</a>
+                    </div>
+                {{else}}
+                    <div class="grid-content col"> 
+                        <a class="black" id="login" href="/login">Login</a>
+                    </div>
+                {{/if}}
 
                 <div class="grid-content col">
                     <a class="black" id="register" href="/registration">Register Account</a>

@@ -20,7 +20,8 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Build Instructions
 1. cd into ```applications``` folder
-2. run ```npm install``` in the terminal
+2. run ```npm install``` in the terminal (installs dependencies)
+3. run ```npm run builddb``` to build database
 
 ## Run Instructions
 1. run ```npm start``` in the terminal

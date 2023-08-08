@@ -25,18 +25,35 @@ module.exports = router;
 
 const mysql = require('mysql2');
 
-var conn = mysql.createConnection({
+var pool = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "1234",
   database: "csc317db",
-});
+  waitForConnections: true,
+  connectionLimit: 20,
+  queueLimit: 0
+}).promise();
 
-conn.query("select 1+1", function(err, results) {
-  if(err) {
-    console.log(err);
-  }
-  else {
+
+async function runSQL() {
+  try {
+    var[results, _] = await pool.query(`select * from users`);
     console.log(results);
   }
-})
+  catch(err) {
+    console.log(err);
+  }
+}
+
+runSQL();
+console.log();
+
+// pool.query(`select * from users`) 
+//     .then(function([results, fields]) {
+//       console.log(results);
+//       return pool.query();
+//     })
+//     .catch(function() {
+
+//     })
