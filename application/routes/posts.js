@@ -24,14 +24,15 @@ router.post('/create', upload.single('uploadVideo'), makeThumbnail, async functi
     // console.log(req.session.user);
     // res.end();
 
-    var {title, descriptionn} = req.body;
+    var {title, description} = req.body;
     var {path, thumbnail} = req.file;
     var {userId} = req.session.user;
 
     try {
+        console.log([title, description, path, thumbnail, userId]);
         var [ insertResult, _ ] = await db.execute(`INSERT INTO posts (title, description, video, thumbnail, fk_userId)
         VALUE
-        (?,?,?,?,?);`, [title, descriptionn, path, thumbnail, userId])
+        (?,?,?,?,?);`, [title, description, path, thumbnail, userId])
 
         if (insertResult && insertResult.affectedRows) {
             req.flash("success", "Your post was successfully created!");
