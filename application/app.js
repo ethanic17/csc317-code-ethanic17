@@ -33,6 +33,9 @@ app.engine(
     helpers: {
       ifEquals : function(pageTitle, checkTitle) {
         return (pageTitle === checkTitle);
+      },
+      isNotEmpty: function(obj) {
+        return obj && obj.constructor === Object && Object.keys(obj).length > 0;
       }
     }, //adding new helpers to handlebars for extra functionality
   })

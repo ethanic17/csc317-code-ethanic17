@@ -3,11 +3,8 @@ var router = express.Router();
 var bcrypt = require('bcrypt');
 const db = require('../conf/database');
 
-//localhist:3000/users/registration
-router.post('/registration', async function(req, res, next) {
-  // console.log(req.body);
-  // res.end();
 
+router.post('/registration', async function(req, res, next) {
   var {username,email,password} = req.body;
   try {
     //  ss validation, unique & rules check
@@ -60,7 +57,9 @@ router.post("/login", async function(req, res, next) {
       const user = results[0];
       if (!user) {
         req.flash("error", "Invalid Login Credentials. Please Try Again.");
-        return res.redirect("/login");
+        return req.session.save(function(err){
+          return res.redirect("/login");
+        });
       }
 
       var passwordsMatch = await bcrypt.compare(password, user.password);
@@ -77,9 +76,15 @@ router.post("/login", async function(req, res, next) {
           username: user.username,
           email: user.email,
         }
-        return res.redirect("/");
+        req.flash("success", "You are successfully logged in.");
+        return req.session.save(function(err){
+          return res.redirect("/");
+        });
       } else {
-        return res.redirect("/login");
+        req.flash("error", "Invalid Login Credentials. Please Try Again.");
+        return req.session.save(function(err){
+          return res.redirect("/login");
+        });
       }
     } catch (err) {
       next(err);

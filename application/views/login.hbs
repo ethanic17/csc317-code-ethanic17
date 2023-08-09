@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 {{>header}}
 <body>
+    {{#if (isNotEmpty this.messages)}}
+        {{> flashmessage this}}
+    {{/if}}
+    
     <div class="div container">
         <div class="row">
             <div class="col-5">
@@ -13,7 +17,6 @@
             </div>
 
             <div class ="col-6">
-                    {{> flashmessage this}}
                     <form class="form-input" action="/users/login" method="post">
                         <div>
                         <label>Username: </label>
