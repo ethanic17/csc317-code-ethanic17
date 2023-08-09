@@ -2,10 +2,19 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
 const db = require('../conf/database');
+const validator = require('validator');
 
 
 router.post('/registration', async function(req, res, next) {
   var {username,email,password} = req.body;
+  // var score = validator.isStrongPassword(password, {returnScore: true});
+
+  // if(score > 40) {
+  //   return res.send(`is strong password --> ${score}`);
+  // } else {
+  //   return res.send("is weak password");
+  // }
+
   try {
     //  ss validation, unique & rules check
     // users can enter "username=sample OR 1=1; DROP users" to mess up db, so check
@@ -97,6 +106,7 @@ router.post("/logout", function(req, res, next) {
         return res.redirect("/");
     });
 });
+
 
 
 

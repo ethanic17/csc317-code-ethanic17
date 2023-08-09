@@ -1,4 +1,5 @@
 var express = require('express');
+// const { isLoggedIn } = require("../middleware/auth");
 var router = express.Router();
 
 /* GET home page. */
@@ -9,6 +10,9 @@ router.get('/', function(req, res, next) {
 router.get('/registration', function(req, res, next) {
   res.render('registration', { title: 'Registration', css:["style.css"]  });
 });
+
+// router.use("/postivideo", isLoggedIn);
+
 
 router.get('/postvideo', function(req, res, next) {
   res.render('postvideo', { title: 'Post A Video', css:["style.css"] });
@@ -24,6 +28,7 @@ router.get('/login', function(req, res, next) {
 module.exports = router;
 
 const mysql = require('mysql2');
+const { isLoggedIn } = require('../middleware/auth');
 
 var pool = mysql.createConnection({
   host: "localhost",
