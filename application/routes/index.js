@@ -11,7 +11,7 @@ router.get('/registration', function(req, res, next) {
   res.render('registration', { title: 'Registration', css:["style.css"]  });
 });
 
-// router.use("/postivideo", isLoggedIn);
+// router.use("/postvideo", isLoggedIn);
 
 
 router.get('/postvideo', function(req, res, next) {
