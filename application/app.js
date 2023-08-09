@@ -6,11 +6,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const handlebars = require("express-handlebars");
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+
 
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const flash = require('express-flash');
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
 
 const app = express();
 
@@ -62,6 +64,8 @@ app.use(session({
   }
 }));
 
+app.use(flash());
+
 app.use(function(req,res, next){
   console.log(req.session);
   if (req.session.user) {
@@ -96,5 +100,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+
 
 module.exports = app;

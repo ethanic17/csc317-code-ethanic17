@@ -59,6 +59,7 @@ router.post("/login", async function(req, res, next) {
       );
       const user = results[0];
       if (!user) {
+        req.flash("error", "Invalid Login Credentials. Please Try Again.");
         return res.redirect("/login");
       }
 
@@ -84,5 +85,14 @@ router.post("/login", async function(req, res, next) {
       next(err);
     }
 });
+
+router.post("/logout", function(req, res, next) {
+    req.session.destroy(function(err) {
+        if(err) next (err);
+        return res.redirect("/");
+    });
+});
+
+
 
 module.exports = router;
