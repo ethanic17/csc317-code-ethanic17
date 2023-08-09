@@ -5,20 +5,20 @@
         <h4>
             Post a video for the world to see!
         </h4>
-        <form>
+        <form action="/posts/create" method="post" enctype="multipart/form-data">
             <label>Post Title: </label>
-            <input class="input" type="text">
+            <input class="input" type="text" name="title" required>
             <br><br>
 
             <label>Post Description: </label>
-            <input class="input" type="text">
+            <input class="input" type="text" name="description" required>
             <br><br>
             
             <label>Video File: </label>
-            <input class="submit input" type="file">
+            <input class="submit input" type="file" name="uploadVideo" required>
             <br><br>
 
-            <input class="checkbox1" type="checkbox">
+            <input class="checkbox1" type="checkbox" name="aupCheck" required>
             <label>I agree to accept the <a href="">Acceptable Use Policy</a> for uploading videos to this site.</label>
             <br><br>
 
