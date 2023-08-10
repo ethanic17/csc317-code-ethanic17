@@ -52,8 +52,31 @@ router.post('/create', upload.single('uploadVideo'), makeThumbnail, async functi
 });
 
 
-router.get("/search", function(req, res, next) {
+router.get("/search", async function(req, res, next) {
     var {key} = req.query;
+    const searchValue = `%${key}%`;
+
+    try {
+        var [results, _] = await db.execute(`select id, title, description, thumbnail, concat_ws(" ", title, description) as haystack
+        FROM posts
+        HAVING haystack like ?;`, [searchValue]);
+        // return res.status(200).json({results});
+
+        if (results && results.length > 0) {
+            res.status(200).json({
+                cont: results.length,
+                results
+
+            })
+        } else {
+            res.status(200).json({
+                message: "No results were found! Here are some other videos you might like:", //TODO 
+                results:[]
+            });
+        }
+    } catch (err) {
+        next(err);
+    }
 })
 
 
