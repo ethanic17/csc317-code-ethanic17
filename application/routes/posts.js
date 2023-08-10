@@ -51,10 +51,5 @@ router.post('/create', upload.single('uploadVideo'), makeThumbnail, async functi
     }
 });
 
-router.get("/:id(\\d+)", getPostById, function(req, res, next) {
-    res.render('viewpost', { 
-        title: `Post Details ${req.params.id}`, 
-        css:["style.css"] });
-  });
 
 module.exports = router;

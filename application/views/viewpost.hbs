@@ -6,16 +6,16 @@
           
 
         <div class="col">
-            <h3>Post Title: n/a </h3>
-            <h3>Post Author: n/a</h3>
-            <h4>Post Creation Time: n/a</h4>
-            <p>Description: n/a</p>
+            <h3>Post Title: {{post.title}} </h3>
+            <h3>Post Author: {{post.username}}</h3>
+            <h4>Post Creation Time: {{post.createdAt}}</h4>
+            <p>Description: {{post.description}}</p>
         </div>
 
         <div class="col">
                 
                 <video controls="controls">
-                    <source src="" type="video/mp4" />
+                    <source src="/{{post.video}}" type="video/mp4" />
                    </video>
             
                 <div class="comments">

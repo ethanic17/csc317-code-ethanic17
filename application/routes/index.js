@@ -1,5 +1,7 @@
 var express = require('express');
 const { isLoggedIn } = require("../middleware/auth");
+
+const { makeThumbnail, getPostById } = require('../middleware/posts');
 var router = express.Router();
  
 /* GET home page. */
@@ -23,7 +25,11 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Login To Flight', css:["style.css"] });
 });
 
-module.exports = router;
+router.get("/viewpost/:id(\\d+)", getPostById, function(req, res, next) {
+  res.render('viewpost', { 
+      title: `Post Details ${req.params.id}`, 
+      css:["style.css"] });
+});
 
 const mysql = require('mysql2');
 // const { isLoggedIn } = require('../middleware/auth');
@@ -52,6 +58,7 @@ async function runSQL() {
 runSQL();
 console.log();
 
+module.exports = router;
 // pool.query(`select * from users`) 
 //     .then(function([results, fields]) {
 //       console.log(results);
