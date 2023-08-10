@@ -13,7 +13,7 @@ async function printPhotos() { /* wrap for loop inside another
      async funtion bc logPhotos() is an async function */
 
     for (let photos of await logPhotos()) { 
-        console.log(photos); 
+        // console.log(photos); 
 
         var card = document.createElement("div");
         var imgDiv = document.createElement("div");

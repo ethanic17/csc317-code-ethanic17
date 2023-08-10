@@ -69,8 +69,9 @@ router.get("/search", async function(req, res, next) {
 
             })
         } else {
-            res.status(200).json({
+            return res.status(200).json({
                 message: "No results were found! Here are some other videos you might like:", //TODO 
+                count: 0,
                 results:[]
             });
         }

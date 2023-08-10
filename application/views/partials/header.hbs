@@ -29,17 +29,37 @@
                     <a class="black" id="home" href="/">Home</a>
                 </div>
 
-                <div class="grid-content col">
+                {{#if isLoggedIn}}
+                     <div class="grid-content col">
+                    {{!-- <a class="black" id="viewpost" href="/viewpost">View Posts</a> --}}
+                    {{!-- <input id="search-text" class="search-text" type="text" /> --}}
+                    {{!-- <div id="search-button" class="search-button fas fa-search"></div> --}}
+
+
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="search-text" class="search-text form-control" type="text" />
+                            <label class="form-label" for="form1"></label>
+                        </div>
+                        <button type="button" class="btn btn-primary search-button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                {{else}}
+                     <div class="grid-content col">
                     <a class="black" id="register" href="/registration">Register Account</a>
                 </div>
+                {{/if}}
+
+               
 
                 <div class="grid-content col">
                     <a class="black" id="postvideo" href="/postvideo">Post A Video</a>
                 </div>
 
-                <div class="grid-content col">
-                    <a class="black" id="viewpost" href="/viewpost">View Posts</a>
-                </div>
+               
 
                 {{#if isLoggedIn}}
                     <div class="grid-content col"> 
@@ -67,3 +87,19 @@
         </nav>
     </div>
 </head>
+
+<script>
+    var searchButton = document.getElementById('search-button');
+    if (searchButton) {
+        searchButton.addEventListener('click', function(ev) {
+           var searchText = document.getElementById('search-text').value;
+           if (!searchText) return;
+           const searchUrl = `/posts/search?key=${searchText}`
+           fetch(searchUrl)
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data);
+            })
+        });
+    }
+</script>
