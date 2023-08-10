@@ -22,14 +22,14 @@ router.post('/registration', async function(req, res, next) {
     [username]);
     if(results && results.length > 0) {
       console.log("username already exists");
-      return res.redirect('/regisration');
+      return res.redirect('/registration');
     }
 
     var [results, _ ] = await db.execute(`select id from users where email=?`, 
     [email]);
     if(results && results.length > 0) {
       console.log("email already exists");
-      return res.redirect('/regisration');
+      return res.redirect('/registration');
     }
 
     var hashedPassword = await bcrypt.hash(password, 5);

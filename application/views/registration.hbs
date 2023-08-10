@@ -7,19 +7,19 @@
         enctype="application/x-www-form-urlencoded">
         <div class="spacing">
             <label>Enter your email: </label>
-            <input class="input" type="email" id="email" name="email">
+            <input class="input" type="email" id="email" name="email" required>
         </div>
         <div class="spacing">
             <label>Create a Username: </label>
-            <input id="username-textbox" class="input" type="username" name="username">
+            <input id="username-textbox" class="input" type="username" name="username" required>
         </div>
         <div class="spacing">
             <label>Create a Password: </label>
-            <input id="password-textbox" class="input" type="password" name="password">
+            <input id="password-textbox" class="input" type="password" name="password" required>
         </div>
         <div class="spacing">
             <label>Re-type Password: </label>
-            <input id="retype-textbox" class="input" type="password" name="confirm-password">
+            <input id="retype-textbox" class="input" type="password" name="confirm-password" required>
         </div>
 
 {{!-- 
@@ -52,7 +52,7 @@
 
         <div class="spacing">
             {{!-- <input class="submit" type="submit"> --}}
-            <button type="submit" class="btn btn-success">Create Account</button>
+            <button id="submitbutton" type="submit" class="btn btn-success">Create Account</button>
          </div>
 
     </form>

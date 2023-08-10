@@ -60,6 +60,5 @@ function comparePassword(e) {
         e.target.setCustomValidity("");
     }
 }
-
-// alert('Invalid password. Password should contain.....');
+    // alert('Invalid password. Password should contain.....');
 // use PHP to send messages back rather than alerts? 
