@@ -16,9 +16,9 @@ router.get('/postvideo', isLoggedIn, function(req, res, next) {
   res.render('postvideo', { title: 'Post A Video', css:["style.css"] });
 });
 
-router.get('/viewpost', function(req, res, next) {
-  res.render('viewpost', { title: 'Post Details', css:["style.css"] });
-});
+// router.get('/viewpost', function(req, res, next) {
+//   res.render('viewpost', { title: 'Post Details', css:["style.css"] });
+// });
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Login To Flight', css:["style.css"] });
 });
