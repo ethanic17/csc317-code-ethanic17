@@ -213,6 +213,11 @@ video {
   height: auto;
 }
 
+#video-viewpost {
+  width: 800px;
+  height: auto;
+}
+
 #video {
   width: 500px;
   height: auto;

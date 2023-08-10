@@ -8,13 +8,13 @@
         <div class="col">
             <h3>Post Title: {{post.title}} </h3>
             <h3>Post Author: {{post.username}}</h3>
-            <h4>Post Creation Time: {{post.createdAt}}</h4>
+            <h4>Post Creation Time: {{ formatDateString post.createdAt}}</h4>
             <p>Description: {{post.description}}</p>
         </div>
 
         <div class="col">
                 
-                <video controls="controls">
+                <video id="video-viewpost" controls="controls">
                     <source src="/{{post.video}}" type="video/mp4" />
                    </video>
             

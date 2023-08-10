@@ -52,4 +52,9 @@ router.post('/create', upload.single('uploadVideo'), makeThumbnail, async functi
 });
 
 
+router.get("/search", function(req, res, next) {
+    var {key} = req.query;
+})
+
+
 module.exports = router;
