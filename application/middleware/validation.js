@@ -1,5 +1,5 @@
 const db = require("../conf/database");
-const validatior = require('validator');
+const validator = require('validator');
 
 module.exports = {
     checkUsername: function (req, res, next) {

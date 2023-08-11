@@ -20,7 +20,7 @@ const app = express();
 const sessionStore = new MySQLStore(
   {
     /* using default option */
-  }, 
+  },
   require("./conf/database")
 );
 
@@ -32,13 +32,13 @@ app.engine(
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
     helpers: {
-      ifEquals : function(pageTitle, checkTitle) {
+      ifEquals: function (pageTitle, checkTitle) {
         return (pageTitle === checkTitle);
       },
-      isNotEmpty: function(obj) {
+      isNotEmpty: function (obj) {
         return obj && obj.constructor === Object && Object.keys(obj).length > 0;
       },
-      formatDateString: function(dateString) {
+      formatDateString: function (dateString) {
         return new Date(dateString).toLocaleString("en-US", {
           timeStyle: "medium",
           dateStyle: "full"
@@ -65,9 +65,9 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(session({
   key: 'current_session_id', //csid
   secret: 'csc317secret',
-	store: sessionStore,
-	resave: false,
-	saveUninitialized: true, // server side tracking
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: true, // server side tracking
   cookie: {
     secure: false,
     httpOnly: true
@@ -76,10 +76,10 @@ app.use(session({
 
 app.use(flash());
 
-app.use(function(req,res, next){
+app.use(function (req, res, next) {
   console.log(req.session);
   if (req.session.user) {
-    res.locals.isLoggedIn =  true;
+    res.locals.isLoggedIn = true;
     res.locals.user = req.session.user;
   }
   next();
@@ -89,15 +89,14 @@ app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use("/posts", postsRouter);
 
-
 /**
  * Catch all route, if we get to here then the 
  * resource requested could not be found.
  */
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   next(createError(404, `The route ${req.method} : ${req.url} does not exist.`));
 })
-  
+
 
 /**
  * Error Handler, used to render the error html file
