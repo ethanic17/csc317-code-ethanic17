@@ -58,8 +58,18 @@
                 <p>Flight is a simple video sharing & streaming site that's ad-free and user-friendly!
                     Create an account today and start watching videos and uploading your own!</p>
 
+                {{#if isLoggedIn}}
+
+                <a class="btn btn-success" href="/postvideo" role="button">Post A Video!</a>
+
+                {{else}}
+
                 <a class="btn btn-success" href="/registration" role="button">Create An Account Today!</a>
                 <p id="small">or login <a href="/login">here</a></p>
+
+                {{/if}}
+
+
             </div>
 
             <div class="col">
