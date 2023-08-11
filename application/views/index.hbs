@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-   {{>header}} <!-- points to header.hbs handlebars partial -->
+{{>header}} <!-- points to header.hbs handlebars partial -->
+
 <body>
     {{#if (isNotEmpty this.messages)}}
-        {{> flashmessage this}}
+    {{> flashmessage this}}
     {{/if}}
- 
+
     <div class="div container div-active">
         <div class="row">
             <div class="col">
-            <h3> Welcome To Flight!</h3>
-            
-            <p>Flight is a simple video sharing & streaming site that's ad-free and user-friendly!
-                Create an account today and start watching videos and uploading your own!</p>
+                <h3> Welcome To Flight!</h3>
+
+                <p>Flight is a simple video sharing & streaming site that's ad-free and user-friendly!
+                    Create an account today and start watching videos and uploading your own!</p>
 
                 <a class="btn btn-success" href="/registration" role="button">Create An Account Today!</a>
                 <p id="small">or login <a href="/login">here</a></p>
             </div>
 
             <div class="col">
-            {{!-- <img class="img-responsive" src="../public/media/city1.gif" alt="picture of a city gif"> --}}
-            <video id="video" controls="controls">
-                    <source src="../public/media/SPRAY AND PRAY.mp4"  type="video/mp4" alt="bad valorant clip" />
-                   </video>
+                {{!-- <img class="img-responsive" src="../public/media/city1.gif" alt="picture of a city gif"> --}}
+                <video id="video" controls="controls">
+                    <source src="../public/media/SPRAY AND PRAY.mp4" type="video/mp4" alt="bad valorant clip" />
+                </video>
             </div>
         </div>
-    </div>   
+    </div>
+
+    <main id="main-content">
+        {{#each results}}
+        <div class="div container div-active">
+            <img src="/{{thumbnail}}" alt="">
+            <p>{{title}}</p>
+        </div>
+        {{/each}}
+    </main>
 
     <div class="flex-container">
-        <h3>Videos Uploaded To Site: &ThinSpace;<h3 id="site-videos"> </h3> </h3>
+        <h3>Videos Uploaded To Site: &ThinSpace;<h3 id="site-videos"> </h3>
+        </h3>
     </div>
 
     <div id="video-gallery" class="flex-container">
@@ -43,4 +54,5 @@
         </footer>
     </div>
 </body>
+
 </html>

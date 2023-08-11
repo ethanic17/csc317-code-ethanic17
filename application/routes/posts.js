@@ -7,53 +7,53 @@ const db = require('../conf/database');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'public/uploads/videos')
+        cb(null, 'public/uploads/videos')
     },
     filename: function (req, file, cb) {
-      const fileExt = file.mimetype.split('/')[1];
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, `${file.fieldname}-${uniqueSuffix}.${fileExt}`)
+        const fileExt = file.mimetype.split('/')[1];
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, `${file.fieldname}-${uniqueSuffix}.${fileExt}`)
     }
-  })
-  
-  const upload = multer({ storage: storage })
+})
 
-router.post('/create', upload.single('uploadVideo'), makeThumbnail, async function(req,res,next){
+const upload = multer({ storage: storage })
+
+router.post('/create', upload.single('uploadVideo'), makeThumbnail, async function (req, res, next) {
     // console.log(req.file);
     // console.log(req.body);
     // console.log(req.session.user);
     // res.end();
 
-    var {title, description} = req.body;
-    var {path, thumbnail} = req.file;
-    var {userId} = req.session.user;
+    var { title, description } = req.body;
+    var { path, thumbnail } = req.file;
+    var { userId } = req.session.user;
 
     try {
         console.log([title, description, path, thumbnail, userId]);
-        var [ insertResult, _ ] = await db.execute(`INSERT INTO posts (title, description, video, thumbnail, fk_userId)
+        var [insertResult, _] = await db.execute(`INSERT INTO posts (title, description, video, thumbnail, fk_userId)
         VALUE
         (?,?,?,?,?);`, [title, description, path, thumbnail, userId])
 
         if (insertResult && insertResult.affectedRows) {
             req.flash("success", "Your post was successfully created!");
-            return req.session.save(function(err) {
+            return req.session.save(function (err) {
                 return res.redirect('/');
             })
         } else {
             req.flash("error", "Your post could not be made, try again later or email support");
-            return req.session.save(function(err) {
-                if(err) next(err);
+            return req.session.save(function (err) {
+                if (err) next(err);
                 return res.redirect('/postvideo');
             })
         }
-    } catch(err) {
+    } catch (err) {
         next(err);
     }
 });
 
 
-router.get("/search", async function(req, res, next) {
-    var {key} = req.query;
+router.get("/search", async function (req, res, next) {
+    var { key } = req.query;
     const searchValue = `%${key}%`;
 
     try {
@@ -63,16 +63,20 @@ router.get("/search", async function(req, res, next) {
         // return res.status(200).json({results});
 
         if (results && results.length > 0) {
-            res.status(200).json({
-                cont: results.length,
-                results
-
-            })
+            res.locals.count = results.length;
+            res.locals.results = results;
+            return res.render('index');
         } else {
+
+            res.locals.count = results.length;
+            res.locals.results = results;
+            return res.render('index');
             return res.status(200).json({
-                message: "No results were found! Here are some other videos you might like:", //TODO 
-                count: 0,
-                results:[]
+                // message: "No results were found! Here are some other videos you might like:", //TODO 
+                // count: 0,
+                // results:[]
+
+
             });
         }
     } catch (err) {

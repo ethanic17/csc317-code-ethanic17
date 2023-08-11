@@ -21,10 +21,8 @@ module.exports = {
         }
     },
 
-    getPostById: async function(req, res, next) {
-        var {id} = req.params;
-
-        console.log("hellooooooooooooooooooooo");
+    getPostById: async function (req, res, next) {
+        var { id } = req.params;
 
         try {
             var [results, _] = await db.execute(`SELECT p.id, p.title, p.description, p.video, p.createdAt, u.username 
@@ -33,22 +31,22 @@ module.exports = {
             ON fk_userId=u.id
             WHERE p.id = ?;`, [id]);
 
-           
+
 
             const post = results[0];
 
             console.log("hellooooooooooooooooooooo", post);
             if (!post) {
                 req.flash("error", `This is not the post you are looking for`);
-                return req.session.save(function(err) {
-                    if(err)next(err);
+                return req.session.save(function (err) {
+                    if (err) next(err);
                     res.redirect('/');
                 })
             } else {
                 res.locals.post = post;
                 next();
             }
-        } catch(err) {
+        } catch (err) {
             next(err);
         }
     }

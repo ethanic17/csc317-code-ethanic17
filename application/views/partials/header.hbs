@@ -39,13 +39,15 @@
 
 
                     <div class="input-group">
-                        <div class="form-outline input-group">
-                            <input type="search" id="search-text" class="search-text form-control" type="text" />
-                            <label class="form-label" for="form1"></label>
-
-                            <button type="button" class="btn btn-primary search-button" id="search-button">
-                                <i class="fas fa-search"></i>
-                            </button>
+                        <div class="form-outline">
+                            <form class="search-bar input-group" action="/posts/search" method="get">
+                                <input type="search" id="search-text" class="search-text form-control" type="text"
+                                    name="key" />
+                                <label class="form-label" for="form1"></label>
+                                <button type="submit" class="btn btn-primary search-button" id="search-button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
