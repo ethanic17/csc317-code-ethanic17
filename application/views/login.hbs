@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {{>header}}
+
 <body>
     {{#if (isNotEmpty this.messages)}}
-        {{> flashmessage this}}
+    {{> flashmessage this}}
     {{/if}}
-    
-    <div class="div container">
+
+    <div class="div container  div-hover">
         <div class="row">
             <div class="col-5">
                 <div>
@@ -16,23 +17,23 @@
                 </div>
             </div>
 
-            <div class ="col-6">
-                    <form class="form-input" action="/users/login" method="post">
-                        <div>
+            <div class="col-6">
+                <form class="form-input" action="/users/login" method="post">
+                    <div>
                         <label>Username: </label>
                         <input class="input" type="username" name="username" required>
-                        </div>
-                        
-                        <div>
+                    </div>
+
+                    <div>
                         <label>Password: </label>
                         <input class="input" type="password" name="password" required>
-                        </div>
-                    
-                        <div class="spacing">
+                    </div>
+
+                    <div class="spacing">
                         {{!-- <input class="submit" type="submit"> --}}
                         <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-                    </form>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -45,7 +46,7 @@
             </div> -->
         </div>
     </div>
-        
+
     </div>
 
     <div class="div">
@@ -55,6 +56,7 @@
             <p>All rights reserved.</p>
         </footer>
     </div>
-    
+
 </body>
+
 </html>

@@ -65,6 +65,7 @@ router.get("/search", async function (req, res, next) {
         if (results && results.length > 0) {
             res.locals.count = results.length;
             res.locals.results = results;
+            res.locals.searchValue = key;
             return res.render('index');
         } else {
 

@@ -6,6 +6,48 @@
     {{> flashmessage this}}
     {{/if}}
 
+
+    {{#if results}}
+
+    <div class="div align-left div-hover">
+        <h3>Search results for <a class="green" href="">{{searchValue}}</a>:</h3>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+
+
+
+
+            {{#each results}}
+            {{!-- <a href="/viewpost/{{id}}">
+                <div class="div-box div-active">
+                    <img src="/{{thumbnail}}" alt="">
+                    <p>{{title}}</p>
+                    <button class="btn btn-success">View Post</button>
+                </div>
+            </a> --}}
+
+            <div class="col-md-auto">
+
+                <div class="card div-box  div-hover" style="width: 18rem;">
+                    <img class="padding" src="/{{thumbnail}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h3 class="card-title">{{title}}</h3>
+                        <p class="card-text small-text">{{description}}</p>
+                        <a href="/viewpost/{{id}}" class="btn btn-primary">View Post</a>
+                    </div>
+                </div>
+
+            </div>
+
+            {{/each}}
+
+        </div>
+    </div>
+
+
+    {{else}}
     <div class="div container div-active">
         <div class="row">
             <div class="col">
@@ -27,23 +69,20 @@
         </div>
     </div>
 
-    <main id="main-content">
-        {{#each results}}
-        <div class="div container div-active">
-            <img src="/{{thumbnail}}" alt="">
-            <p>{{title}}</p>
-        </div>
-        {{/each}}
-    </main>
+    {{/if}}
 
-    <div class="flex-container">
+
+    {{!--
+
+
+    {{!-- <div class="flex-container">
         <h3>Videos Uploaded To Site: &ThinSpace;<h3 id="site-videos"> </h3>
         </h3>
-    </div>
+    </div> --}}
 
-    <div id="video-gallery" class="flex-container">
+    {{!-- <div id="video-gallery" class="flex-container">
         <!-- divs created thru for loop in JS-->
-    </div>
+    </div> --}}
 
 
     <div class="div">

@@ -35,7 +35,7 @@ module.exports = {
 
             const post = results[0];
 
-            console.log("hellooooooooooooooooooooo", post);
+            console.log(post);
             if (!post) {
                 req.flash("error", `This is not the post you are looking for`);
                 return req.session.save(function (err) {

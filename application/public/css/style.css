@@ -1,5 +1,5 @@
 body {
-  padding: 50px; 
+  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: beige;
   background-image: url(../media/city2.gif);
@@ -29,7 +29,7 @@ a:hover {
   background-color: lightblue;
 }
 
-div:hover {
+.div-hover:hover {
   background-color: lightblue;
 }
 
@@ -48,7 +48,7 @@ div:hover {
   font-size: 15px;
   border-radius: 10px;
   /* border: none; */
-  border: 1px solid black; 
+  border: 1px solid black;
   margin: 10px auto auto auto;
 }
 
@@ -112,8 +112,8 @@ footer {
   text-align: center;
   font-size: 25px;
   /* background-color: lightblue; */
-  background-color:  #B2BEB5;
-  
+  background-color: #B2BEB5;
+
   border-radius: 10px;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
@@ -136,7 +136,8 @@ footer {
   font-size: 20px;
 }
 
-.input:invalid { /* invalid state */
+.input:invalid {
+  /* invalid state */
   background-color: lightcoral;
 }
 
@@ -181,13 +182,13 @@ footer {
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background:  #B2BEB5;
+  background: #B2BEB5;
   border-radius: 10px;
   margin: 50px 0px 0px 0px;
   padding: 10px;
 }
 
-.flex-container > div {
+.flex-container>div {
   background-color: beige;
   width: 170px;
   height: auto;
@@ -203,6 +204,7 @@ footer {
   from {
     opacity: 100%;
   }
+
   to {
     opacity: 0%;
   }
@@ -226,4 +228,39 @@ video {
 .scale-down {
   height: 100px;
   width: 100px;
+}
+
+.div-box {
+  margin: 5px;
+  padding: 5px;
+  text-align: left;
+  font-size: 25px;
+  background-color: #B2BEB5;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.postdetails {
+  text-decoration: underline;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.green {
+  color: green;
+}
+
+.green:hover {
+  color: beige;
+}
+
+.padding {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.small-text {
+  font-size: 20px;
 }
