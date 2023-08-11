@@ -17,27 +17,17 @@
             <div class="row">
 
                 <div class="grid-content col">
-                    <h1 class="icons"> <i class="fa-solid fa-plane"></i> Flight</h1>
+                    <a class="black" id="home" href="/">
+                        <h1 class="icons"> <i class="fa-solid fa-plane"></i> Flight</h1>
+                    </a>
                 </div>
 
-                {{!-- {{#if (ifEquals this.title "CSC 317 App")}}
-                <h1> testing text</h1>
-                <script>
-                    var home = document.getElementById('home');
-                    home.classList.add("active"); 
-                </script>
-                {{/if}} --}}
-                <div class="grid-content col">
+                {{!-- <div class="grid-content col">
                     <a class="black" id="home" href="/">Home</a>
-                </div>
+                </div> --}}
 
                 {{#if isLoggedIn}}
                 <div class="grid-content col">
-                    {{!-- <a class="black" id="viewpost" href="/viewpost">View Posts</a> --}}
-                    {{!-- <input id="search-text" class="search-text" type="text" /> --}}
-                    {{!-- <div id="search-button" class="search-button fas fa-search"></div> --}}
-
-
                     <div class="input-group">
                         <div class="form-outline">
                             <form class="search-bar input-group" action="/posts/search" method="get">
@@ -75,10 +65,10 @@
                     </form>
 
 
-                    <form action="/users/profile" method="post">
+                    {{!-- <form action="/users/profile" method="post">
                         <button type="submit" class="btn btn-primary"
                             onclick="window.location.href = '/profile';">Profile</button>
-                    </form>
+                    </form> --}}
                 </div>
 
                 {{else}}

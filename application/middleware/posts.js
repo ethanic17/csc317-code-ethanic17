@@ -49,5 +49,13 @@ module.exports = {
         } catch (err) {
             next(err);
         }
+    },
+
+    getCommentsForPostById: async function (req, res, next) {
+        next();
+    },
+
+    getRecentPosts: async function (req, res, next) {
+        pass();
     }
 }
