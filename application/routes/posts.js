@@ -68,6 +68,8 @@ router.get("/search", async function (req, res, next) {
             res.locals.searchValue = key;
             return res.render('index');
         } else {
+            req.flash("error", "No posts were found with your requested search term! Displaying all videos on this site");
+            var [results, _] = await db.execute(`select * FROM posts;`);
 
             res.locals.count = results.length;
             res.locals.results = results;
