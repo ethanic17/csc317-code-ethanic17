@@ -33,7 +33,7 @@ const mysql = require('mysql2');
 var pool = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "1234",
+  password: "",
   database: "csc317db",
   waitForConnections: true,
   connectionLimit: 20,
